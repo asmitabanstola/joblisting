@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'title' %}Lists{% endblock %}
+{% block 'body' %}
+ <div class="container" style="padding:10px;">
+        <div class="col-md-9">
+            {% for i in job %}
+            <img src = "{{i.image.url}}" style="height:80px;width:80px;">
+         <h5>{{i.title}}</h5>
+         <span>Skills: {{i.skills}}</span><br>
+         <span>Company Name: {{i.company_name}}</span><br>
+         <span>Location: {{i.location}}</span><br>
+         <span>Salary: {{i.salary}}</span><br>
+         <span>Published Date: {{i.publish_date}}</span><br>
+         <span>Expire_date: {{i.expire_date}}</span><br>
+         <p>{{i.description}}</p>
+            <hr>
+            {% endfor %}
+        </div>
+        </div>
+{% endblock %}
+
